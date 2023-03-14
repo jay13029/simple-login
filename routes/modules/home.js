@@ -11,16 +11,16 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   let check = false
   let showMsg
-  let user = users.find(user => user.email === req.body.email)
-  if(user != null && user.password === req.body.password){
+  const user = users.find(user => user.email === req.body.email)
+  if (user != null && user.password === req.body.password) {
     check = true
-    showMsg = `Welcome back, ${ user.firstName }!`
+    showMsg = `Welcome back, ${user.firstName}!`
   }
 
-  if(check){
+  if (check) {
     res.render('welcome', { showMsg })
   } else {
-    let message = 'Wrong email or password, please login again.'
+    const message = 'Wrong email or password, please login again.'
     res.render('index', { message })
   }
 })

@@ -24,6 +24,6 @@ const users = [
     email: 'nick@shield.com',
     password: 'password'
   }
- ]
+]
 
- module.exports = users
+module.exports = users
