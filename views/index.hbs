@@ -1,6 +1,16 @@
-<form action="" class="w-75 m-auto">
-    <input class="form-control my-3" type="text" placeholder="Email">
-    <input class="form-control my-3" type="text" placeholder="Password">
+<form action="/" method="POST" id="login-form" class="w-75 m-auto">
+    <input class="form-control my-3" type="text" name="email" placeholder="Email">
+    <input class="form-control my-3" type="password" name="password" placeholder="Password">
     <button class="btn btn-dark">Sign in</button>
 </form>
+{{#if message}}
+<p id="warn-msg" class="text-danger fs-5 my-3">{{ message }}</p>
+{{/if}}
 
+<script>
+    let loginForm = document.querySelector('#login-form')
+    let warnMsg = document.querySelector('#warn-msg')
+    loginForm.addEventListener('keydown', function(e){
+        warnMsg.innerHTML = ''
+    })
+</script>
